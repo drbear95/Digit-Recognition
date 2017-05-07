@@ -1,0 +1,7 @@
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\DataCollecting\bin\Debug\DataCollecting.exe.config
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\DataCollecting\bin\Debug\DataCollecting.exe
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\DataCollecting\bin\Debug\DataCollecting.pdb
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\DataCollecting\obj\Debug\DataCollecting.exe
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\DataCollecting\obj\Debug\DataCollecting.pdb
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\DataCollecting\obj\Debug\DataCollecting.csprojResolveAssemblyReference.cache
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\DataCollecting\bin\Debug\FANNCSharp.dll

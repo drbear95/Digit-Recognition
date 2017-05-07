@@ -1,0 +1,13 @@
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\bin\Debug\Program.exe.config
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\bin\Debug\Program.exe
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\bin\Debug\Program.pdb
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\bin\Debug\FANNCSharp.dll
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\obj\Debug\Digits_Recognition.csprojResolveAssemblyReference.cache
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\obj\Debug\Program.Properties.Resources.resources
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\obj\Debug\Digits_Recognition.csproj.GenerateResource.Cache
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\obj\Debug\Program.exe
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\obj\Debug\Program.pdb
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\obj\Debug\Program.Collecting_Data.DataCollector.resources
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\obj\Debug\Program.Form1.resources
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\obj\Debug\Program.Network_Training.NetworkTrain.resources
+H:\GitHub\Digits-recognition-V1\Digits_Recognition_V1\Program\obj\Debug\Program.UserGraphicInterface.GraphicInterface.resources
