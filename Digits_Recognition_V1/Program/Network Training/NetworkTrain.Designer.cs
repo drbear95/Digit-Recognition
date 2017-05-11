@@ -287,7 +287,7 @@
             this.txtMomentum.Name = "txtMomentum";
             this.txtMomentum.Size = new System.Drawing.Size(101, 28);
             this.txtMomentum.TabIndex = 29;
-            this.txtMomentum.Text = "20";
+            this.txtMomentum.Text = "0";
             // 
             // txtLearningRate
             // 
@@ -296,7 +296,7 @@
             this.txtLearningRate.Name = "txtLearningRate";
             this.txtLearningRate.Size = new System.Drawing.Size(101, 28);
             this.txtLearningRate.TabIndex = 30;
-            this.txtLearningRate.Text = "20";
+            this.txtLearningRate.Text = "0";
             // 
             // NetworkTrain
             // 
