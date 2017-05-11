@@ -56,7 +56,9 @@ namespace Program.UserGraphicInterface
                     using (Graphics g = Graphics.FromImage(matrix.Image))
                     {
                         g.DrawLine(new Pen(Color.White, (int)cmbFontSize.SelectedItem), lastPoint, e.Location);
-                        g.SmoothingMode = SmoothingMode.HighQuality;
+                        g.CompositingQuality = CompositingQuality.HighQuality;
+                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        g.SmoothingMode = SmoothingMode.AntiAlias;
                     }
                     matrix.Invalidate();
                     lastPoint = e.Location;
@@ -96,6 +98,19 @@ namespace Program.UserGraphicInterface
                 txtOut2.Text = calc_out[1].ToString();
                 txtOut3.Text = calc_out[2].ToString();
                 txtOut4.Text = calc_out[3].ToString();
+                string binary = "";
+                for (int i = 0; i < 4; i++)
+                {
+                    if (calc_out[i] > 0.5)
+                    {
+                        binary += 1;
+                    }
+                    else
+                    {
+                        binary += 0;
+                    }
+                }
+                txtCheckedValue.Text = Convert.ToInt32(binary, 2).ToString();
             }
         }
 

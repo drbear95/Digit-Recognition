@@ -4,12 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Program.Network_Training
 {
@@ -23,6 +26,7 @@ namespace Program.Network_Training
             cmbActivationFunctionHidden.DataSource = Enum.GetValues(typeof(ActivationFunction));
             cmbActivationFunctionOutput.DataSource = Enum.GetValues(typeof(ActivationFunction));
             cmbTrainAlgorithm.DataSource = Enum.GetValues(typeof(TrainingAlgorithm));
+
         }
         private void Train()
         {
@@ -50,14 +54,57 @@ namespace Program.Network_Training
                         net.ActivationFunctionHidden = _activation;
                         _activation = (ActivationFunction)cmbActivationFunctionOutput.SelectedItem;
                         net.ActivationFunctionOutput = _activation;
-                        _algorithm = (TrainingAlgorithm)cmbTrainAlgorithm.SelectedItem;
-                        net.TrainingAlgorithm = _algorithm;
-                        net.TrainStopFunction = StopFunction.STOPFUNC_BIT;
-                        net.BitFailLimit = 0.001F;
+                        string momentum = txtMomentum.Text.ToString();
+                        if (momentum.Contains('.'))
+                            momentum = momentum.Replace('.', ',');
+                        net.LearningMomentum = float.Parse(momentum);
+                        string lr = txtLearningRate.Text.ToString();
+                        if (lr.Contains('.'))
+                            lr = lr.Replace('.', ',');
+                        net.LearningRate = float.Parse(lr);
                         txtReport.AppendText("\r\n" + "Inicjalizuje wagi");
                         net.InitWeights(data);
                         txtReport.AppendText("\r\n" + "Rozpoczynam trening");
-                        net.TrainOnData(data, Convert.ToUInt32(txtNumEpoch.Text), 10, Convert.ToUInt32(txtDesiredError.Text));
+                        _algorithm = (TrainingAlgorithm)cmbTrainAlgorithm.SelectedItem;
+                        int count = 0;
+                        string err = txtDesiredError.Text.ToString();
+                        if (err.Contains('.'))
+                            err = err.Replace('.', ',');
+                        if (_algorithm == TrainingAlgorithm.TRAIN_BATCH)
+                            do
+                            {
+                                count++;
+                                net.TrainEpochBatchParallel(data, 4);
+                                txtReport.AppendText("\r\n" + $"Epoka {count} zakończona, Błąd {net.MSE}"); 
+                            } while (net.MSE > float.Parse(err));
+                        if (_algorithm == TrainingAlgorithm.TRAIN_INCREMENTAL)
+                            do
+                            {
+                                count++;
+                                net.TrainEpochIncrementalMod(data);
+                                txtReport.AppendText("\r\n" + $"Epoka {count} zakończona, Błąd {net.MSE}"); 
+                            } while (net.MSE > float.Parse(err));
+                        if (_algorithm == TrainingAlgorithm.TRAIN_QUICKPROP)
+                            do
+                            {
+                                count++;
+                                net.TrainEpochQuickpropParallel(data, 4);
+                                txtReport.AppendText("\r\n" + $"Epoka {count} zakończona, Błąd {net.MSE}"); 
+                            } while (net.MSE > float.Parse(err));
+                        if (_algorithm == TrainingAlgorithm.TRAIN_RPROP)
+                            do
+                            {
+                                count++;
+                                net.TrainEpochIrpropmParallel(data, 4);
+                                txtReport.AppendText("\r\n" + $"Epoka {count} zakończona, Błąd {net.MSE}"); 
+                            } while (net.MSE > float.Parse(err));
+                        if (_algorithm == TrainingAlgorithm.TRAIN_SARPROP)
+                            do
+                            {
+                                count++;
+                                net.TrainEpochSarpropParallel(data, 4);
+                                txtReport.AppendText("\r\n" + $"Epoka {count} zakończona, Błąd {net.MSE}"); 
+                            } while (net.MSE > float.Parse(err));
                         txtReport.AppendText("\r\n" + "\n Sieć wytrenowana, trwa zapisywanie...");
                         net.Save(@"..\..\Network\sampledigits_float.net");
                         decimal_point = net.SaveToFixed(@"..\..\Network\sampledigits_fixed.net");
@@ -79,6 +126,5 @@ namespace Program.Network_Training
         {
             Hide();
         }
-
     }
 }

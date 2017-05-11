@@ -35,14 +35,12 @@
             this.txtNumLayers = new System.Windows.Forms.TextBox();
             this.txtNumNeurHidden = new System.Windows.Forms.TextBox();
             this.txtDesiredError = new System.Windows.Forms.TextBox();
-            this.txtNumEpoch = new System.Windows.Forms.TextBox();
             this.btnTrain = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtReport = new System.Windows.Forms.TextBox();
             this.cmbActivationFunctionHidden = new System.Windows.Forms.ComboBox();
             this.cmbActivationFunctionOutput = new System.Windows.Forms.ComboBox();
@@ -51,6 +49,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTrainRate = new System.Windows.Forms.Label();
+            this.txtMomentum = new System.Windows.Forms.TextBox();
+            this.txtLearningRate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -91,7 +93,7 @@
             // txtNumNeurHidden
             // 
             this.txtNumNeurHidden.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
-            this.txtNumNeurHidden.Location = new System.Drawing.Point(196, 187);
+            this.txtNumNeurHidden.Location = new System.Drawing.Point(195, 147);
             this.txtNumNeurHidden.Name = "txtNumNeurHidden";
             this.txtNumNeurHidden.Size = new System.Drawing.Size(101, 28);
             this.txtNumNeurHidden.TabIndex = 5;
@@ -105,15 +107,6 @@
             this.txtDesiredError.Size = new System.Drawing.Size(100, 28);
             this.txtDesiredError.TabIndex = 6;
             this.txtDesiredError.Text = "0";
-            // 
-            // txtNumEpoch
-            // 
-            this.txtNumEpoch.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
-            this.txtNumEpoch.Location = new System.Drawing.Point(196, 147);
-            this.txtNumEpoch.Name = "txtNumEpoch";
-            this.txtNumEpoch.Size = new System.Drawing.Size(100, 28);
-            this.txtNumEpoch.TabIndex = 7;
-            this.txtNumEpoch.Text = "1000";
             // 
             // btnTrain
             // 
@@ -164,11 +157,11 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 187);
+            this.label4.Location = new System.Drawing.Point(13, 147);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 42);
+            this.label4.Size = new System.Drawing.Size(148, 33);
             this.label4.TabIndex = 14;
             this.label4.Text = "Liczba neuronów w warstwie ukrytej";
             // 
@@ -183,18 +176,6 @@
             this.label5.Size = new System.Drawing.Size(120, 19);
             this.label5.TabIndex = 15;
             this.label5.Text = "Błąd Pożądany";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 156);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 19);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Liczba Epok";
             // 
             // txtReport
             // 
@@ -275,6 +256,48 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(12, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 19);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Momentum";
+            // 
+            // txtTrainRate
+            // 
+            this.txtTrainRate.AutoSize = true;
+            this.txtTrainRate.BackColor = System.Drawing.Color.Black;
+            this.txtTrainRate.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.txtTrainRate.ForeColor = System.Drawing.Color.White;
+            this.txtTrainRate.Location = new System.Drawing.Point(12, 221);
+            this.txtTrainRate.Name = "txtTrainRate";
+            this.txtTrainRate.Size = new System.Drawing.Size(176, 19);
+            this.txtTrainRate.TabIndex = 28;
+            this.txtTrainRate.Text = "Współczynnik uczenia";
+            // 
+            // txtMomentum
+            // 
+            this.txtMomentum.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.txtMomentum.Location = new System.Drawing.Point(195, 181);
+            this.txtMomentum.Name = "txtMomentum";
+            this.txtMomentum.Size = new System.Drawing.Size(101, 28);
+            this.txtMomentum.TabIndex = 29;
+            this.txtMomentum.Text = "20";
+            // 
+            // txtLearningRate
+            // 
+            this.txtLearningRate.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.txtLearningRate.Location = new System.Drawing.Point(195, 215);
+            this.txtLearningRate.Name = "txtLearningRate";
+            this.txtLearningRate.Size = new System.Drawing.Size(101, 28);
+            this.txtLearningRate.TabIndex = 30;
+            this.txtLearningRate.Text = "20";
+            // 
             // NetworkTrain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +305,10 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Program.Properties.Resources._0002D2JVEG335J9M_C122_F4;
             this.ClientSize = new System.Drawing.Size(528, 430);
+            this.Controls.Add(this.txtLearningRate);
+            this.Controls.Add(this.txtMomentum);
+            this.Controls.Add(this.txtTrainRate);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -290,14 +317,12 @@
             this.Controls.Add(this.cmbActivationFunctionOutput);
             this.Controls.Add(this.cmbActivationFunctionHidden);
             this.Controls.Add(this.txtReport);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnTrain);
-            this.Controls.Add(this.txtNumEpoch);
             this.Controls.Add(this.txtDesiredError);
             this.Controls.Add(this.txtNumNeurHidden);
             this.Controls.Add(this.txtNumLayers);
@@ -318,14 +343,12 @@
         private System.Windows.Forms.TextBox txtNumLayers;
         private System.Windows.Forms.TextBox txtNumNeurHidden;
         private System.Windows.Forms.TextBox txtDesiredError;
-        private System.Windows.Forms.TextBox txtNumEpoch;
         private System.Windows.Forms.Button btnTrain;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtReport;
         private System.Windows.Forms.ComboBox cmbActivationFunctionHidden;
         private System.Windows.Forms.ComboBox cmbActivationFunctionOutput;
@@ -334,5 +357,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label txtTrainRate;
+        private System.Windows.Forms.TextBox txtMomentum;
+        private System.Windows.Forms.TextBox txtLearningRate;
     }
 }
