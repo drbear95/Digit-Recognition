@@ -57,11 +57,23 @@ namespace Program.Network_Training
                         string momentum = txtMomentum.Text.ToString();
                         if (momentum.Contains('.'))
                             momentum = momentum.Replace('.', ',');
-                        net.LearningMomentum = float.Parse(momentum);
+                        if (float.Parse(momentum) > 1)
+                        {
+                            MessageBox.Show("Zbyt wysokie momentum, powinno być z zakresu od 0 do 1 (ustawiam standardowe)");
+                            net.LearningMomentum = 0.8f;
+                        }
+                        else
+                            net.LearningMomentum = float.Parse(momentum);
                         string lr = txtLearningRate.Text.ToString();
                         if (lr.Contains('.'))
                             lr = lr.Replace('.', ',');
-                        net.LearningRate = float.Parse(lr);
+                        if (float.Parse(momentum) > 1)
+                        {
+                            MessageBox.Show("Zbyt wysoki współczynnik trenowania, powinno być z zakresu od 0 do 1 (ustawiam standardowe)");
+                            net.LearningRate = 0.8f;
+                        }
+                        else
+                            net.LearningRate = float.Parse(lr);
                         txtReport.AppendText("\r\n" + "Inicjalizuje wagi");
                         net.InitWeights(data);
                         txtReport.AppendText("\r\n" + "Rozpoczynam trening");
