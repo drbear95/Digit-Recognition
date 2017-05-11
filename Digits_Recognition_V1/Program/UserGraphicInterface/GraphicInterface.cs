@@ -98,7 +98,7 @@ namespace Program.UserGraphicInterface
                 txtOut2.Text = calc_out[1].ToString();
                 txtOut3.Text = calc_out[2].ToString();
                 txtOut4.Text = calc_out[3].ToString();
-                string binary = "";
+                string binary = string.Empty;
                 for (int i = 0; i < 4; i++)
                 {
                     if (calc_out[i] > 0.5)
