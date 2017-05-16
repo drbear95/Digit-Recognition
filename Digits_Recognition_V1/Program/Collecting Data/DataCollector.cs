@@ -17,11 +17,13 @@ namespace Program.Collecting_Data
     {
 
         public int _FontSize { get; set; }
+        Brush b = Brushes.White;
         public DataCollector()
         {
             InitializeComponent();
             cmbFontSize.Items.AddRange(new object[]
             {
+                1,
                 5,
                 6,
                 7,
@@ -52,16 +54,19 @@ namespace Program.Collecting_Data
                 {
                     if (Matrix.Image == null)
                     {
-                        Bitmap btm = new Bitmap(Matrix.Width, Matrix.Height,System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                        Bitmap btm = new Bitmap(25, 50, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                         Matrix.Image = btm;
+                        Matrix.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
                     using (Graphics g = Graphics.FromImage(Matrix.Image))
                     {
-                        g.DrawLine(new Pen(Color.White, (int)cmbFontSize.SelectedItem), lastPoint, e.Location);
-                        g.SmoothingMode = SmoothingMode.HighQuality;
+                        g.DrawEllipse(new Pen(Brushes.White, 3),e.Location.X / 4, e.Location.Y / 4, 1, 1);
+                        g.CompositingQuality = CompositingQuality.HighQuality;
+                        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        g.SmoothingMode = SmoothingMode.AntiAlias;
                     }
                     Matrix.Invalidate();
-                    lastPoint = e.Location;
+                    lastPoint = new Point(e.Location.X/4,e.Location.Y/4);
                 }
             }
         }
@@ -72,6 +77,7 @@ namespace Program.Collecting_Data
         }
         private void clearButton_Click(object sender, EventArgs e)
         {
+            Matrix.Image.Save(@"bitmapka.bmp");
             if (Matrix.Image != null)
             {
                 Matrix.Image = null;
@@ -86,13 +92,13 @@ namespace Program.Collecting_Data
                 {
                     DataAppender.GetMatrix((Bitmap)Matrix.Image, Convert.ToInt32(txtNumber.Text));
                     string[] content = File.ReadAllLines(@"..\..\Training Data\sampledigits.data");
-                    content[0] = $"{(content.Count()-1) / 2} 20000 4";
+                    content[0] = $"{(content.Count()-1) / 2} 1250 4";
                     File.Delete(@"..\..\Training Data\sampledigits.data");
                     WriteAllLinesBetter(@"..\..\Training Data\sampledigits.data", content);
                 }
                 else
                 {
-                    File.WriteAllText(@"..\..\Training Data/sampledigits.data", "1 1000 4");
+                    File.WriteAllText(@"..\..\Training Data/sampledigits.data", "1 1250 4");
                     DataAppender.GetMatrix((Bitmap)Matrix.Image, Convert.ToInt32(txtNumber.Text));
                 }
             }
@@ -100,6 +106,7 @@ namespace Program.Collecting_Data
             {
                 MessageBox.Show("Nie podałeś jaka to jest liczba!", "Błąd!", MessageBoxButtons.OK);
             }
+            clearButton_Click(sender, e);
         }
         public void WriteAllLinesBetter(string path, params string[] lines)
         {

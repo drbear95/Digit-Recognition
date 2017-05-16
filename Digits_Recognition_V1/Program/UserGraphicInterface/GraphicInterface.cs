@@ -50,18 +50,19 @@ namespace Program.UserGraphicInterface
                 {
                     if (matrix.Image == null)
                     {
-                        Bitmap btm = new Bitmap(matrix.Width, matrix.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                        Bitmap btm = new Bitmap(25, 50, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
                         matrix.Image = btm;
+                        matrix.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
                     using (Graphics g = Graphics.FromImage(matrix.Image))
                     {
-                        g.DrawLine(new Pen(Color.White, (int)cmbFontSize.SelectedItem), lastPoint, e.Location);
+                        g.DrawEllipse(new Pen(Brushes.White, 3), e.Location.X / 4, e.Location.Y / 4, 1, 1);
                         g.CompositingQuality = CompositingQuality.HighQuality;
                         g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                         g.SmoothingMode = SmoothingMode.AntiAlias;
                     }
                     matrix.Invalidate();
-                    lastPoint = e.Location;
+                    lastPoint = new Point(e.Location.X / 4, e.Location.Y / 4);
                 }
             }
         }

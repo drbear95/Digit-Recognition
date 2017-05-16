@@ -39,6 +39,7 @@ namespace Program.Network_Training
                     Convert.ToUInt32(txtNumNeurHidden.Text),
                     Convert.ToUInt32(txtNumOutputs.Text)))
                 {
+                    //Convert.ToUInt32(txtNumLayers.Text)
                     int decimal_point;
                     txtReport.AppendText("\r\n" + $"Ilość warstw {Convert.ToUInt32(txtNumLayers.Text)}");
                     txtReport.AppendText("\r\n" + $"Ilość wejść  {Convert.ToUInt32(txtNumInputs.Text)}");
@@ -54,6 +55,8 @@ namespace Program.Network_Training
                         net.ActivationFunctionHidden = _activation;
                         _activation = (ActivationFunction)cmbActivationFunctionOutput.SelectedItem;
                         net.ActivationFunctionOutput = _activation;
+                        net.ActivationSteepnessHidden = 1.0F;
+                        net.ActivationSteepnessOutput = 1.0F;
                         string momentum = txtMomentum.Text.ToString();
                         if (momentum.Contains('.'))
                             momentum = momentum.Replace('.', ',');
@@ -122,6 +125,7 @@ namespace Program.Network_Training
                         decimal_point = net.SaveToFixed(@"..\..\Network\sampledigits_fixed.net");
                         data.SaveTrainToFixed(@"..\..\Network\sampledigits_fixed.data", (uint)decimal_point);
                         txtReport.AppendText("\r\n" + "Sieć zapisana");
+                        MessageBox.Show("Sieć wytrenowana i zapisana");
                     }
                 }
             }));

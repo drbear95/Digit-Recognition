@@ -62,17 +62,15 @@
             // 
             // txtNumInputs
             // 
-            this.txtNumInputs.Enabled = false;
             this.txtNumInputs.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.txtNumInputs.Location = new System.Drawing.Point(196, 11);
             this.txtNumInputs.Name = "txtNumInputs";
             this.txtNumInputs.Size = new System.Drawing.Size(100, 28);
             this.txtNumInputs.TabIndex = 2;
-            this.txtNumInputs.Text = "20000";
+            this.txtNumInputs.Text = "1250";
             // 
             // txtNumOutputs
             // 
-            this.txtNumOutputs.Enabled = false;
             this.txtNumOutputs.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.txtNumOutputs.Location = new System.Drawing.Point(196, 45);
             this.txtNumOutputs.Name = "txtNumOutputs";

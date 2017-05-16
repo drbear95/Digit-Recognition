@@ -42,6 +42,7 @@
             // Matrix
             // 
             this.Matrix.BackColor = System.Drawing.Color.Black;
+            this.Matrix.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Matrix.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Matrix.Location = new System.Drawing.Point(12, 12);
             this.Matrix.Name = "Matrix";
