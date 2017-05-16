@@ -77,7 +77,6 @@ namespace Program.Collecting_Data
         }
         private void clearButton_Click(object sender, EventArgs e)
         {
-            Matrix.Image.Save(@"bitmapka.bmp");
             if (Matrix.Image != null)
             {
                 Matrix.Image = null;
