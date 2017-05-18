@@ -89,5 +89,45 @@ namespace Program.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Help_icon {
+            get {
+                object obj = ResourceManager.GetObject("Help-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Oxygen_Icons_org_Oxygen_Actions_go_previous {
+            get {
+                object obj = ResourceManager.GetObject("Oxygen-Icons.org-Oxygen-Actions-go-previous", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap oxygen_icons_org_oxygen_actions_go_previous_6 {
+            get {
+                object obj = ResourceManager.GetObject("oxygen_icons_org_oxygen_actions_go_previous-6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap strzałeczka {
+            get {
+                object obj = ResourceManager.GetObject("strzałeczka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

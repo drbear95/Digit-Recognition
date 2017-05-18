@@ -156,6 +156,18 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strzałeczka.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Oxygen-Icons.org-Oxygen-Actions-go-previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oxygen_icons_org_oxygen_actions_go_previous-6.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\FANNCSharp-x86.0.1.8\build\FANNCSharp-x86.targets" Condition="Exists('..\packages\FANNCSharp-x86.0.1.8\build\FANNCSharp-x86.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

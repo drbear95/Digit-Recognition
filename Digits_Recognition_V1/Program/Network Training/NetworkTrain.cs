@@ -142,5 +142,30 @@ namespace Program.Network_Training
         {
             Hide();
         }
+
+        private void HelpClick(object sender, EventArgs e)
+        {
+            Size = new Size(825, 470);
+            string operation = ((sender as System.Windows.Forms.Button).Name).ToString();
+            Dictionary<string, string[]> operations = new Dictionary<string, string[]>()
+                {
+                    { "btnInputHelp",new string[]{ $"Ilość wejść sieci neuronowej {txtNumInputs.Text}", "ponieważ matryca to 25px na 50px co daje nam 1250px" } },
+                    { "btnOutputHelp",new string[]{$"Ilość wyjść sieci neronowej {txtNumOutputs.Text}","wynika to z założenia projektowego, na wyjściu miały pojawiać się liczby zapisane binarnie" } },
+                    { "btnLayersHelp",new string[]{$"Ilość warstw sieci neuronowej {txtNumLayers.Text}","warstwa neuronów wejściowych +", "warstwa neuronów ukrytych +", "warstwa neuronów wyjściowych" ,"daję nam liczbę 3" } },
+                    { "btnErrorHelp",new string[]{$"Błąd pożądany {txtDesiredError.Text}", "im mniejszy ustawimy błąd tym dokładniejsza będzie nasza sieć"} },
+                    { "btnNeuronsQuantityHelp",new string[]{$"Ilość neuronów w warstwie ukrytej {txtNumNeurHidden.Text}", "nie ma dobrej recepty na dobór właściwej ilości neuronów w warstwie ukrytej","można spróbować wartości równej","pierwiastkowi z iloczynu liczby neuronów wejściowych i neuronów wyjściowych" } },
+                    { "btnMomentumHelp",new string[]{"Kiedy stosowane jest momentum","korekta wag neuronu zależy nie tylko od sygnału wejściowego i błędu","jaki neuron popełnił, ale również od tego","jak duża była korekta wag w poprzednim kroku uczenia.","W ten sposób szybkość uczenia (wielkość korekty wag) automatycznie maleje w miarę zbliżania się do właściwego rozwiązania", "a proces uczenia staje się płynniejsz"} },
+                    { "btnTrainRateHelp",new string[]{ "Współczynnik uczenia (w angielskiej literaturze learning rate)","można porównać do nauczyciela: zbyt wysoka wartość odpowiada nauczycielowi surowemu","który nawet za małe pomyłki stosuje wysoką karę.","Uczeń (czyli sieć) pełen frustracji miota się","od jednej skrajności do drugiej i nie może trafić na właściwe rozwiązanie."," Zbyt niski współczynnik z kolei to nauczyciel zbyt łagodny","przy którym uczeń uczy się bardzo powoli","gdyż jego błędy są tolerowane."} },
+                    { "btnActivationFunctionHiddenHelp",new string[]{ "Funkcja według której obliczana jest wartość wyjścia warstwy ukrytej", Environment.NewLine, "LINEAR => Liniowa y(x)=ax+b", "Treshold => Funkcja progowa y(x)=0 dla x<a 1 dla x>a", Environment.NewLine, "Sigmoid => Funkcja sigmoidalna y(x)=1/1+e^-betax", Environment.NewLine, "Gaussian => Funkcja gaussa y(x)=ae^-(x-b)^2/2c^2", Environment.NewLine, "Elliot  funkcja Elliota (zaprojektowana przez Davida Elliota na bazie sigmoidalnej funkcji aktywacji)", Environment.NewLine, "Sin|Cos funkcja typu Sinus | Cosinus" } },
+                    { "btnActivationFunctionOutHelp",new string[]{"Funkcja według której obliczana jest wartość wyjścia warstwy ukrytej", Environment.NewLine, "LINEAR => Liniowa y(x)=ax+b", "Treshold => Funkcja progowa y(x)=0 dla x<a 1 dla x>a", Environment.NewLine, "Sigmoid => Funkcja sigmoidalna y(x)=1/1+e^-betax", Environment.NewLine, "Gaussian => Funkcja gaussa y(x)=ae^-(x-b)^2/2c^2", Environment.NewLine, "Elliot  funkcja Elliota (zaprojektowana przez Davida Elliota na bazie sigmoidalnej funkcji aktywacji)", Environment.NewLine, "Sin|Cos funkcja typu Sinus | Cosinus" } },
+                    { "btnTrainAlgorithmRate",new string[]{ "TRAIN_INCREMENTAL => Standardowy algorytm backpropagowania, w którym wagi są aktualizowane po każdym wzorcu szkolenia. Oznacza to, że wagi są wielokrotnie aktualizowane podczas jednej epoki. Z tego powodu niektóre problemy będą trenować bardzo szybko z tym algorytmem, podczas gdy inne bardziej zaawansowane problemy nie będą szkolone bardzo dobrze ", Environment.NewLine, "TRAIN_BATCH => Standardowy algorytm, w którym wagi są aktualizowane po obliczeniu średniego kwadratu błąd dla całego zestawu treningowego. Oznacza to, że wagi są aktualizowane tylko raz w epoce. Z tego powodu niektóre problemy będą trenować wolniej przy użyciu tego algorytmu. Ale ponieważ średni błąd kwadratowy jest obliczany bardziej poprawnie niż w szkoleniach przyrostowych, niektóre problemy osiągną lepsze rozwiązania z tym algorytmem.", Environment.NewLine, "TRAIN_RPROP => Bardziej zaawansowany algorytm szkoleń wsadowych, który zapewnia wiele dobrych wyników. Algorytm szkolenia RPROP jest adaptacyjny i dlatego nie wykorzystuje wartości uczenia się. Niektóre inne parametry mogą być ustawione tak, aby zmienić algorytm RPROP, ale jest zalecane tylko dla użytkowników z wiedzą na temat pracy algorytmu szkolenia RPROP.", Environment.NewLine, "TRAIN_QUICKPROP => Bardziej zaawansowany algorytm szkoleń wsadowych, który zapewnia wiele dobrych wyników. Algorytm szybkiego szkolenia wykorzystuje parametr learning_rate wraz z innymi bardziej zaawansowanymi parametrami, ale zaleca się tylko zmianę tych zaawansowanych parametrów dla użytkowników, którzy mają wiedzę na temat pracy algorytmu szybkiego szkolenia.", Environment.NewLine, "TRAIN_SARPROP => Symulowane wyżarzanie i rozkład wag w adaptacyjnym uczeniu się sieci neuronowej" } }
+                };
+            txtHelp.Lines = operations[operation];
+        }
+
+        private void btnHideHelp_Click(object sender, EventArgs e)
+        {
+            Size = new Size(565, 470);
+        }
     }
 }

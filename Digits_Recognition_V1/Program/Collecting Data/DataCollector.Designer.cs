@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataCollector));
             this.Matrix = new System.Windows.Forms.PictureBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
-            this.cmbFontSize = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Matrix)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +43,7 @@
             this.Matrix.BackColor = System.Drawing.Color.Black;
             this.Matrix.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Matrix.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Matrix.Location = new System.Drawing.Point(12, 12);
+            this.Matrix.Location = new System.Drawing.Point(9, 12);
             this.Matrix.Name = "Matrix";
             this.Matrix.Size = new System.Drawing.Size(100, 200);
             this.Matrix.TabIndex = 0;
@@ -55,7 +54,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(138, 166);
+            this.btnClear.Location = new System.Drawing.Point(141, 166);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(96, 23);
             this.btnClear.TabIndex = 1;
@@ -65,7 +64,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(138, 137);
+            this.btnSave.Location = new System.Drawing.Point(141, 137);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(96, 23);
             this.btnSave.TabIndex = 2;
@@ -77,46 +76,25 @@
             // 
             this.lblName.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblName.Location = new System.Drawing.Point(115, 63);
+            this.lblName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblName.Location = new System.Drawing.Point(110, 12);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(119, 18);
+            this.lblName.Size = new System.Drawing.Size(127, 40);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Jaka to liczba?";
             // 
             // txtNumber
             // 
-            this.txtNumber.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtNumber.Location = new System.Drawing.Point(204, 84);
+            this.txtNumber.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold);
+            this.txtNumber.Location = new System.Drawing.Point(187, 55);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(30, 32);
+            this.txtNumber.Size = new System.Drawing.Size(50, 46);
             this.txtNumber.TabIndex = 4;
             this.txtNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // cmbFontSize
-            // 
-            this.cmbFontSize.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cmbFontSize.FormattingEnabled = true;
-            this.cmbFontSize.Location = new System.Drawing.Point(185, 33);
-            this.cmbFontSize.Name = "cmbFontSize";
-            this.cmbFontSize.Size = new System.Drawing.Size(49, 27);
-            this.cmbFontSize.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(121, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Wielkość Czcionki";
-            // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(138, 195);
+            this.btnExit.Location = new System.Drawing.Point(141, 195);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(96, 23);
             this.btnExit.TabIndex = 7;
@@ -130,15 +108,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Program.Properties.Resources._1;
-            this.ClientSize = new System.Drawing.Size(238, 230);
+            this.ClientSize = new System.Drawing.Size(240, 230);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbFontSize);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.Matrix);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DataCollector";
             this.Text = "Data Collector";
             ((System.ComponentModel.ISupportInitialize)(this.Matrix)).EndInit();
@@ -154,8 +131,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtNumber;
-        private System.Windows.Forms.ComboBox cmbFontSize;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
     }
 }

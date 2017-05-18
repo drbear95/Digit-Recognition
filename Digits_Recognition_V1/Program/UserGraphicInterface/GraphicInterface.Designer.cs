@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GraphicInterface));
             this.matrix = new System.Windows.Forms.PictureBox();
-            this.cmbFontSize = new System.Windows.Forms.ComboBox();
             this.txtOut1 = new System.Windows.Forms.TextBox();
             this.txtOut2 = new System.Windows.Forms.TextBox();
             this.txtOut3 = new System.Windows.Forms.TextBox();
             this.txtOut4 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCheckedValue = new System.Windows.Forms.TextBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnAddNewData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.matrix)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,38 +57,30 @@
             this.matrix.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Matrix_MouseMove);
             this.matrix.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Matrix_MouseUp);
             // 
-            // cmbFontSize
-            // 
-            this.cmbFontSize.FormattingEnabled = true;
-            this.cmbFontSize.Location = new System.Drawing.Point(118, 26);
-            this.cmbFontSize.Name = "cmbFontSize";
-            this.cmbFontSize.Size = new System.Drawing.Size(121, 21);
-            this.cmbFontSize.TabIndex = 1;
-            // 
             // txtOut1
             // 
-            this.txtOut1.Location = new System.Drawing.Point(118, 77);
+            this.txtOut1.Location = new System.Drawing.Point(118, 37);
             this.txtOut1.Name = "txtOut1";
             this.txtOut1.Size = new System.Drawing.Size(40, 20);
             this.txtOut1.TabIndex = 2;
             // 
             // txtOut2
             // 
-            this.txtOut2.Location = new System.Drawing.Point(164, 77);
+            this.txtOut2.Location = new System.Drawing.Point(164, 37);
             this.txtOut2.Name = "txtOut2";
             this.txtOut2.Size = new System.Drawing.Size(40, 20);
             this.txtOut2.TabIndex = 3;
             // 
             // txtOut3
             // 
-            this.txtOut3.Location = new System.Drawing.Point(210, 77);
+            this.txtOut3.Location = new System.Drawing.Point(210, 37);
             this.txtOut3.Name = "txtOut3";
             this.txtOut3.Size = new System.Drawing.Size(40, 20);
             this.txtOut3.TabIndex = 4;
             // 
             // txtOut4
             // 
-            this.txtOut4.Location = new System.Drawing.Point(256, 77);
+            this.txtOut4.Location = new System.Drawing.Point(256, 37);
             this.txtOut4.Name = "txtOut4";
             this.txtOut4.Size = new System.Drawing.Size(40, 20);
             this.txtOut4.TabIndex = 5;
@@ -99,23 +91,11 @@
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(114, 50);
+            this.label1.Location = new System.Drawing.Point(118, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 22);
             this.label1.TabIndex = 6;
             this.label1.Text = "Wynik (dokładny)";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(114, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 19);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Rozmiar Czcionki";
             // 
             // label3
             // 
@@ -123,7 +103,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(114, 100);
+            this.label3.Location = new System.Drawing.Point(118, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 22);
             this.label3.TabIndex = 8;
@@ -132,16 +112,16 @@
             // txtCheckedValue
             // 
             this.txtCheckedValue.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtCheckedValue.Location = new System.Drawing.Point(118, 125);
+            this.txtCheckedValue.Location = new System.Drawing.Point(118, 85);
             this.txtCheckedValue.Name = "txtCheckedValue";
             this.txtCheckedValue.Size = new System.Drawing.Size(40, 39);
             this.txtCheckedValue.TabIndex = 9;
             // 
             // btnCheck
             // 
-            this.btnCheck.Location = new System.Drawing.Point(118, 172);
+            this.btnCheck.Location = new System.Drawing.Point(118, 130);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(75, 40);
+            this.btnCheck.Size = new System.Drawing.Size(86, 40);
             this.btnCheck.TabIndex = 10;
             this.btnCheck.Text = "Sprawdź";
             this.btnCheck.UseVisualStyleBackColor = true;
@@ -159,13 +139,24 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(199, 172);
+            this.btnClear.Location = new System.Drawing.Point(210, 130);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 40);
+            this.btnClear.Size = new System.Drawing.Size(86, 40);
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Czyść";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnAddNewData
+            // 
+            this.btnAddNewData.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnAddNewData.Location = new System.Drawing.Point(118, 184);
+            this.btnAddNewData.Name = "btnAddNewData";
+            this.btnAddNewData.Size = new System.Drawing.Size(178, 57);
+            this.btnAddNewData.TabIndex = 13;
+            this.btnAddNewData.Text = "Zaakceptuj Liczbę\r\ni \r\nZapisz Do Danych Uczących";
+            this.btnAddNewData.UseVisualStyleBackColor = true;
+            this.btnAddNewData.Click += new System.EventHandler(this.btnAddNewData_Click);
             // 
             // GraphicInterface
             // 
@@ -173,20 +164,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Program.Properties.Resources._0002D2JVEG335J9M_C122_F4;
-            this.ClientSize = new System.Drawing.Size(299, 251);
+            this.ClientSize = new System.Drawing.Size(299, 246);
+            this.Controls.Add(this.btnAddNewData);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.txtCheckedValue);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtOut4);
             this.Controls.Add(this.txtOut3);
             this.Controls.Add(this.txtOut2);
             this.Controls.Add(this.txtOut1);
-            this.Controls.Add(this.cmbFontSize);
             this.Controls.Add(this.matrix);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GraphicInterface";
             this.Text = "GraphicInterface";
             ((System.ComponentModel.ISupportInitialize)(this.matrix)).EndInit();
@@ -198,17 +189,16 @@
         #endregion
 
         private System.Windows.Forms.PictureBox matrix;
-        private System.Windows.Forms.ComboBox cmbFontSize;
         private System.Windows.Forms.TextBox txtOut1;
         private System.Windows.Forms.TextBox txtOut2;
         private System.Windows.Forms.TextBox txtOut3;
         private System.Windows.Forms.TextBox txtOut4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCheckedValue;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnAddNewData;
     }
 }

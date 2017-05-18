@@ -1,4 +1,5 @@
 ﻿using FANNCSharp.Float;
+using Program.Data_Collector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,21 +20,6 @@ namespace Program.UserGraphicInterface
         public GraphicInterface()
         {
             InitializeComponent();
-            cmbFontSize.Items.AddRange(new object[]
-            {
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-            });
-            cmbFontSize.SelectedIndex = 0;
         }
         Point lastPoint = Point.Empty;
         bool isMouseDown = new Boolean();
@@ -89,16 +75,16 @@ namespace Program.UserGraphicInterface
             {
                 string[] temp = new string[matrix.Image.Width * matrix.Image.Height];
                 float[] entrydata = new float[temp.Length];
-                temp = Data_Collector.DataAppender.GetMatrix((Bitmap)matrix.Image, temp);
+                temp = DataAppender.GetMatrix((Bitmap)matrix.Image, temp);
                 for (int i = 0; i < temp.Length-1; i++)
                 {
                     entrydata[i] = float.Parse(temp[i]);
                 }
                 DataType[] calc_out = net.Run(entrydata);
-                txtOut1.Text = calc_out[0].ToString();
-                txtOut2.Text = calc_out[1].ToString();
-                txtOut3.Text = calc_out[2].ToString();
-                txtOut4.Text = calc_out[3].ToString();
+                txtOut1.Text = String.Format("{0:F4}", calc_out[0]);
+                txtOut2.Text = String.Format("{0:F4}", calc_out[1]);
+                txtOut3.Text = String.Format("{0:F4}", calc_out[2]);
+                txtOut4.Text = String.Format("{0:F4}", calc_out[3]);
                 string binary = string.Empty;
                 for (int i = 0; i < 4; i++)
                 {
@@ -126,11 +112,52 @@ namespace Program.UserGraphicInterface
             txtOut2.Text = String.Empty;
             txtOut3.Text = String.Empty;
             txtOut4.Text = String.Empty;
+            txtCheckedValue.Text = string.Empty;
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void btnAddNewData_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataAppender.GetMatrix((Bitmap)matrix.Image, Convert.ToInt32(txtCheckedValue.Text));
+                string[] content = File.ReadAllLines(@"..\..\Training Data\sampledigits.data");
+                content[0] = $"{(content.Count() - 1) / 2} 1250 4";
+                File.Delete(@"..\..\Training Data\sampledigits.data");
+                WriteAllLinesBetter(@"..\..\Training Data\sampledigits.data", content);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nie Sprawdziłeś Liczby");
+            }
+            btnClear.PerformClick();
+        }
+        public void WriteAllLinesBetter(string path, params string[] lines)
+        {
+            if (path == null)
+                throw new ArgumentNullException("path");
+            if (lines == null)
+                throw new ArgumentNullException("lines");
+
+            using (var stream = File.OpenWrite(path))
+            {
+                stream.SetLength(0);
+                using (var writer = new StreamWriter(stream))
+                {
+                    if (lines.Length > 0)
+                    {
+                        for (var i = 0; i < lines.Length - 1; i++)
+                        {
+                            writer.WriteLine(lines[i]);
+                        }
+                        writer.Write(lines[lines.Length - 1]);
+                    }
+                }
+            }
         }
     }
 }

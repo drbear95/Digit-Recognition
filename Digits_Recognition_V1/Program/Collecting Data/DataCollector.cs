@@ -15,28 +15,9 @@ namespace Program.Collecting_Data
 {
     public partial class DataCollector : Form
     {
-
-        public int _FontSize { get; set; }
-        Brush b = Brushes.White;
         public DataCollector()
         {
-            InitializeComponent();
-            cmbFontSize.Items.AddRange(new object[]
-            {
-                1,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-            });
-            cmbFontSize.SelectedIndex = 0;
+            InitializeComponent(); 
         }
         Point lastPoint = Point.Empty;
         bool isMouseDown = new Boolean();

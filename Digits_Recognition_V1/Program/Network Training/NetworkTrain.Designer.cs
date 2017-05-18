@@ -1,4 +1,6 @@
-﻿namespace Program.Network_Training
+﻿using System.Windows.Forms;
+
+namespace Program.Network_Training
 {
     partial class NetworkTrain
     {
@@ -28,8 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NetworkTrain));
             this.txtNumInputs = new System.Windows.Forms.TextBox();
             this.txtNumOutputs = new System.Windows.Forms.TextBox();
             this.txtNumLayers = new System.Windows.Forms.TextBox();
@@ -53,12 +54,19 @@
             this.txtTrainRate = new System.Windows.Forms.Label();
             this.txtMomentum = new System.Windows.Forms.TextBox();
             this.txtLearningRate = new System.Windows.Forms.TextBox();
+            this.btnInputHelp = new System.Windows.Forms.Button();
+            this.btnOutputHelp = new System.Windows.Forms.Button();
+            this.btnLayersHelp = new System.Windows.Forms.Button();
+            this.btnErrorHelp = new System.Windows.Forms.Button();
+            this.btnNeuronsQuantityHelp = new System.Windows.Forms.Button();
+            this.btnMomentumHelp = new System.Windows.Forms.Button();
+            this.btnTrainRateHelp = new System.Windows.Forms.Button();
+            this.btnActivationFunctionHiddenHelp = new System.Windows.Forms.Button();
+            this.btnActivationFunctionOutHelp = new System.Windows.Forms.Button();
+            this.btnTrainAlgorithmRate = new System.Windows.Forms.Button();
+            this.btnHideHelp = new System.Windows.Forms.Button();
+            this.txtHelp = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // txtNumInputs
             // 
@@ -108,7 +116,7 @@
             // 
             // btnTrain
             // 
-            this.btnTrain.Location = new System.Drawing.Point(441, 388);
+            this.btnTrain.Location = new System.Drawing.Point(472, 389);
             this.btnTrain.Name = "btnTrain";
             this.btnTrain.Size = new System.Drawing.Size(75, 30);
             this.btnTrain.TabIndex = 9;
@@ -178,7 +186,7 @@
             // txtReport
             // 
             this.txtReport.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtReport.Location = new System.Drawing.Point(331, 11);
+            this.txtReport.Location = new System.Drawing.Point(362, 12);
             this.txtReport.Multiline = true;
             this.txtReport.Name = "txtReport";
             this.txtReport.Size = new System.Drawing.Size(185, 369);
@@ -296,13 +304,159 @@
             this.txtLearningRate.TabIndex = 30;
             this.txtLearningRate.Text = "0";
             // 
+            // btnInputHelp
+            // 
+            this.btnInputHelp.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnInputHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInputHelp.Location = new System.Drawing.Point(302, 11);
+            this.btnInputHelp.Name = "btnInputHelp";
+            this.btnInputHelp.Size = new System.Drawing.Size(28, 28);
+            this.btnInputHelp.TabIndex = 32;
+            this.btnInputHelp.UseVisualStyleBackColor = true;
+            this.btnInputHelp.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnOutputHelp
+            // 
+            this.btnOutputHelp.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnOutputHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOutputHelp.Location = new System.Drawing.Point(302, 45);
+            this.btnOutputHelp.Name = "btnOutputHelp";
+            this.btnOutputHelp.Size = new System.Drawing.Size(28, 28);
+            this.btnOutputHelp.TabIndex = 33;
+            this.btnOutputHelp.UseVisualStyleBackColor = true;
+            this.btnOutputHelp.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnLayersHelp
+            // 
+            this.btnLayersHelp.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnLayersHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLayersHelp.Location = new System.Drawing.Point(302, 79);
+            this.btnLayersHelp.Name = "btnLayersHelp";
+            this.btnLayersHelp.Size = new System.Drawing.Size(28, 28);
+            this.btnLayersHelp.TabIndex = 34;
+            this.btnLayersHelp.UseVisualStyleBackColor = true;
+            this.btnLayersHelp.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnErrorHelp
+            // 
+            this.btnErrorHelp.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnErrorHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnErrorHelp.Location = new System.Drawing.Point(302, 113);
+            this.btnErrorHelp.Name = "btnErrorHelp";
+            this.btnErrorHelp.Size = new System.Drawing.Size(28, 28);
+            this.btnErrorHelp.TabIndex = 35;
+            this.btnErrorHelp.UseVisualStyleBackColor = true;
+            this.btnErrorHelp.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnNeuronsQuantityHelp
+            // 
+            this.btnNeuronsQuantityHelp.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnNeuronsQuantityHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNeuronsQuantityHelp.Location = new System.Drawing.Point(302, 147);
+            this.btnNeuronsQuantityHelp.Name = "btnNeuronsQuantityHelp";
+            this.btnNeuronsQuantityHelp.Size = new System.Drawing.Size(28, 28);
+            this.btnNeuronsQuantityHelp.TabIndex = 36;
+            this.btnNeuronsQuantityHelp.UseVisualStyleBackColor = true;
+            this.btnNeuronsQuantityHelp.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnMomentumHelp
+            // 
+            this.btnMomentumHelp.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnMomentumHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMomentumHelp.Location = new System.Drawing.Point(302, 181);
+            this.btnMomentumHelp.Name = "btnMomentumHelp";
+            this.btnMomentumHelp.Size = new System.Drawing.Size(28, 28);
+            this.btnMomentumHelp.TabIndex = 37;
+            this.btnMomentumHelp.UseVisualStyleBackColor = true;
+            this.btnMomentumHelp.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnTrainRateHelp
+            // 
+            this.btnTrainRateHelp.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnTrainRateHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTrainRateHelp.Location = new System.Drawing.Point(302, 215);
+            this.btnTrainRateHelp.Name = "btnTrainRateHelp";
+            this.btnTrainRateHelp.Size = new System.Drawing.Size(28, 28);
+            this.btnTrainRateHelp.TabIndex = 38;
+            this.btnTrainRateHelp.UseVisualStyleBackColor = true;
+            this.btnTrainRateHelp.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnActivationFunctionHiddenHelp
+            // 
+            this.btnActivationFunctionHiddenHelp.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnActivationFunctionHiddenHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActivationFunctionHiddenHelp.Location = new System.Drawing.Point(323, 255);
+            this.btnActivationFunctionHiddenHelp.Name = "btnActivationFunctionHiddenHelp";
+            this.btnActivationFunctionHiddenHelp.Size = new System.Drawing.Size(30, 30);
+            this.btnActivationFunctionHiddenHelp.TabIndex = 39;
+            this.btnActivationFunctionHiddenHelp.UseVisualStyleBackColor = true;
+            this.btnActivationFunctionHiddenHelp.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnActivationFunctionOutHelp
+            // 
+            this.btnActivationFunctionOutHelp.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnActivationFunctionOutHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActivationFunctionOutHelp.Location = new System.Drawing.Point(323, 302);
+            this.btnActivationFunctionOutHelp.Name = "btnActivationFunctionOutHelp";
+            this.btnActivationFunctionOutHelp.Size = new System.Drawing.Size(30, 30);
+            this.btnActivationFunctionOutHelp.TabIndex = 41;
+            this.btnActivationFunctionOutHelp.UseVisualStyleBackColor = true;
+            this.btnActivationFunctionOutHelp.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnTrainAlgorithmRate
+            // 
+            this.btnTrainAlgorithmRate.BackgroundImage = global::Program.Properties.Resources.Help_icon;
+            this.btnTrainAlgorithmRate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTrainAlgorithmRate.Location = new System.Drawing.Point(323, 350);
+            this.btnTrainAlgorithmRate.Name = "btnTrainAlgorithmRate";
+            this.btnTrainAlgorithmRate.Size = new System.Drawing.Size(30, 30);
+            this.btnTrainAlgorithmRate.TabIndex = 42;
+            this.btnTrainAlgorithmRate.UseVisualStyleBackColor = true;
+            this.btnTrainAlgorithmRate.Click += new System.EventHandler(this.HelpClick);
+            // 
+            // btnHideHelp
+            // 
+            this.btnHideHelp.BackColor = System.Drawing.Color.Transparent;
+            this.btnHideHelp.BackgroundImage = global::Program.Properties.Resources.oxygen_icons_org_oxygen_actions_go_previous_6;
+            this.btnHideHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHideHelp.FlatAppearance.BorderSize = 0;
+            this.btnHideHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHideHelp.Location = new System.Drawing.Point(548, 231);
+            this.btnHideHelp.Name = "btnHideHelp";
+            this.btnHideHelp.Size = new System.Drawing.Size(32, 32);
+            this.btnHideHelp.TabIndex = 43;
+            this.btnHideHelp.UseVisualStyleBackColor = false;
+            this.btnHideHelp.Click += new System.EventHandler(this.btnHideHelp_Click);
+            // 
+            // txtHelp
+            // 
+            this.txtHelp.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.txtHelp.Location = new System.Drawing.Point(582, 11);
+            this.txtHelp.Multiline = true;
+            this.txtHelp.Name = "txtHelp";
+            this.txtHelp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtHelp.Size = new System.Drawing.Size(215, 369);
+            this.txtHelp.TabIndex = 44;
+            // 
             // NetworkTrain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Program.Properties.Resources._0002D2JVEG335J9M_C122_F4;
-            this.ClientSize = new System.Drawing.Size(528, 430);
+            this.ClientSize = new System.Drawing.Size(806, 431);
+            this.Controls.Add(this.txtHelp);
+            this.Controls.Add(this.btnHideHelp);
+            this.Controls.Add(this.btnTrainAlgorithmRate);
+            this.Controls.Add(this.btnActivationFunctionOutHelp);
+            this.Controls.Add(this.btnActivationFunctionHiddenHelp);
+            this.Controls.Add(this.btnTrainRateHelp);
+            this.Controls.Add(this.btnMomentumHelp);
+            this.Controls.Add(this.btnNeuronsQuantityHelp);
+            this.Controls.Add(this.btnErrorHelp);
+            this.Controls.Add(this.btnLayersHelp);
+            this.Controls.Add(this.btnOutputHelp);
+            this.Controls.Add(this.btnInputHelp);
             this.Controls.Add(this.txtLearningRate);
             this.Controls.Add(this.txtMomentum);
             this.Controls.Add(this.txtTrainRate);
@@ -326,6 +480,7 @@
             this.Controls.Add(this.txtNumLayers);
             this.Controls.Add(this.txtNumOutputs);
             this.Controls.Add(this.txtNumInputs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NetworkTrain";
             this.Text = "NetworkTrain";
             this.ResumeLayout(false);
@@ -334,8 +489,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox txtNumInputs;
         private System.Windows.Forms.TextBox txtNumOutputs;
         private System.Windows.Forms.TextBox txtNumLayers;
@@ -359,5 +512,17 @@
         private System.Windows.Forms.Label txtTrainRate;
         private System.Windows.Forms.TextBox txtMomentum;
         private System.Windows.Forms.TextBox txtLearningRate;
+        private System.Windows.Forms.Button btnInputHelp;
+        private System.Windows.Forms.Button btnOutputHelp;
+        private System.Windows.Forms.Button btnLayersHelp;
+        private System.Windows.Forms.Button btnErrorHelp;
+        private System.Windows.Forms.Button btnNeuronsQuantityHelp;
+        private System.Windows.Forms.Button btnMomentumHelp;
+        private System.Windows.Forms.Button btnTrainRateHelp;
+        private System.Windows.Forms.Button btnActivationFunctionHiddenHelp;
+        private System.Windows.Forms.Button btnActivationFunctionOutHelp;
+        private System.Windows.Forms.Button btnTrainAlgorithmRate;
+        private System.Windows.Forms.Button btnHideHelp;
+        private System.Windows.Forms.TextBox txtHelp;
     }
 }
