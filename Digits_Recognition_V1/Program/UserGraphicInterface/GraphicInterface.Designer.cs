@@ -59,30 +59,42 @@
             // 
             // txtOut1
             // 
+            this.txtOut1.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtOut1.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.txtOut1.ForeColor = System.Drawing.SystemColors.Info;
             this.txtOut1.Location = new System.Drawing.Point(118, 37);
             this.txtOut1.Name = "txtOut1";
-            this.txtOut1.Size = new System.Drawing.Size(40, 20);
+            this.txtOut1.Size = new System.Drawing.Size(40, 24);
             this.txtOut1.TabIndex = 2;
             // 
             // txtOut2
             // 
+            this.txtOut2.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtOut2.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.txtOut2.ForeColor = System.Drawing.SystemColors.Info;
             this.txtOut2.Location = new System.Drawing.Point(164, 37);
             this.txtOut2.Name = "txtOut2";
-            this.txtOut2.Size = new System.Drawing.Size(40, 20);
+            this.txtOut2.Size = new System.Drawing.Size(40, 24);
             this.txtOut2.TabIndex = 3;
             // 
             // txtOut3
             // 
+            this.txtOut3.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtOut3.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.txtOut3.ForeColor = System.Drawing.SystemColors.Info;
             this.txtOut3.Location = new System.Drawing.Point(210, 37);
             this.txtOut3.Name = "txtOut3";
-            this.txtOut3.Size = new System.Drawing.Size(40, 20);
+            this.txtOut3.Size = new System.Drawing.Size(40, 24);
             this.txtOut3.TabIndex = 4;
             // 
             // txtOut4
             // 
+            this.txtOut4.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtOut4.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.txtOut4.ForeColor = System.Drawing.SystemColors.Info;
             this.txtOut4.Location = new System.Drawing.Point(256, 37);
             this.txtOut4.Name = "txtOut4";
-            this.txtOut4.Size = new System.Drawing.Size(40, 20);
+            this.txtOut4.Size = new System.Drawing.Size(40, 24);
             this.txtOut4.TabIndex = 5;
             // 
             // label1
@@ -103,7 +115,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(118, 60);
+            this.label3.Location = new System.Drawing.Point(114, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 22);
             this.label3.TabIndex = 8;
@@ -111,51 +123,65 @@
             // 
             // txtCheckedValue
             // 
+            this.txtCheckedValue.BackColor = System.Drawing.SystemColors.InfoText;
             this.txtCheckedValue.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtCheckedValue.Location = new System.Drawing.Point(118, 85);
+            this.txtCheckedValue.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtCheckedValue.Location = new System.Drawing.Point(118, 89);
             this.txtCheckedValue.Name = "txtCheckedValue";
             this.txtCheckedValue.Size = new System.Drawing.Size(40, 39);
             this.txtCheckedValue.TabIndex = 9;
             // 
             // btnCheck
             // 
+            this.btnCheck.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCheck.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnCheck.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCheck.Location = new System.Drawing.Point(118, 130);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(86, 40);
             this.btnCheck.TabIndex = 10;
             this.btnCheck.Text = "Sprawdź";
-            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.UseVisualStyleBackColor = false;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(12, 218);
+            this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExit.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnExit.Location = new System.Drawing.Point(12, 219);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(85, 30);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "Wyjdź";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnClear.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnClear.Location = new System.Drawing.Point(210, 130);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(86, 40);
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Czyść";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAddNewData
             // 
             this.btnAddNewData.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnAddNewData.Location = new System.Drawing.Point(118, 184);
+            this.btnAddNewData.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddNewData.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnAddNewData.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAddNewData.Location = new System.Drawing.Point(118, 176);
             this.btnAddNewData.Name = "btnAddNewData";
-            this.btnAddNewData.Size = new System.Drawing.Size(178, 57);
+            this.btnAddNewData.Size = new System.Drawing.Size(178, 73);
             this.btnAddNewData.TabIndex = 13;
-            this.btnAddNewData.Text = "Zaakceptuj Liczbę\r\ni \r\nZapisz Do Danych Uczących";
-            this.btnAddNewData.UseVisualStyleBackColor = true;
+            this.btnAddNewData.Text = "Zaakceptuj Liczbę\r\ni Zapisz\r\nDo Danych Uczących";
+            this.btnAddNewData.UseVisualStyleBackColor = false;
             this.btnAddNewData.Click += new System.EventHandler(this.btnAddNewData_Click);
             // 
             // GraphicInterface
@@ -164,7 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Program.Properties.Resources._0002D2JVEG335J9M_C122_F4;
-            this.ClientSize = new System.Drawing.Size(299, 246);
+            this.ClientSize = new System.Drawing.Size(299, 261);
             this.Controls.Add(this.btnAddNewData);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnExit);

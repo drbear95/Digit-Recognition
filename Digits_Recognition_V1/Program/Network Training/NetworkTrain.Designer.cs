@@ -70,7 +70,10 @@ namespace Program.Network_Training
             // 
             // txtNumInputs
             // 
+            this.txtNumInputs.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtNumInputs.Enabled = false;
             this.txtNumInputs.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.txtNumInputs.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtNumInputs.Location = new System.Drawing.Point(196, 11);
             this.txtNumInputs.Name = "txtNumInputs";
             this.txtNumInputs.Size = new System.Drawing.Size(100, 28);
@@ -79,7 +82,10 @@ namespace Program.Network_Training
             // 
             // txtNumOutputs
             // 
+            this.txtNumOutputs.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtNumOutputs.Enabled = false;
             this.txtNumOutputs.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.txtNumOutputs.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtNumOutputs.Location = new System.Drawing.Point(196, 45);
             this.txtNumOutputs.Name = "txtNumOutputs";
             this.txtNumOutputs.Size = new System.Drawing.Size(100, 28);
@@ -88,8 +94,10 @@ namespace Program.Network_Training
             // 
             // txtNumLayers
             // 
+            this.txtNumLayers.BackColor = System.Drawing.SystemColors.InfoText;
             this.txtNumLayers.Enabled = false;
             this.txtNumLayers.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.txtNumLayers.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtNumLayers.Location = new System.Drawing.Point(196, 79);
             this.txtNumLayers.Name = "txtNumLayers";
             this.txtNumLayers.Size = new System.Drawing.Size(100, 28);
@@ -98,30 +106,37 @@ namespace Program.Network_Training
             // 
             // txtNumNeurHidden
             // 
+            this.txtNumNeurHidden.BackColor = System.Drawing.SystemColors.InfoText;
             this.txtNumNeurHidden.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.txtNumNeurHidden.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtNumNeurHidden.Location = new System.Drawing.Point(195, 147);
             this.txtNumNeurHidden.Name = "txtNumNeurHidden";
             this.txtNumNeurHidden.Size = new System.Drawing.Size(101, 28);
             this.txtNumNeurHidden.TabIndex = 5;
-            this.txtNumNeurHidden.Text = "20";
+            this.txtNumNeurHidden.Text = "70";
             // 
             // txtDesiredError
             // 
+            this.txtDesiredError.BackColor = System.Drawing.SystemColors.InfoText;
             this.txtDesiredError.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.txtDesiredError.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtDesiredError.Location = new System.Drawing.Point(196, 113);
             this.txtDesiredError.Name = "txtDesiredError";
             this.txtDesiredError.Size = new System.Drawing.Size(100, 28);
             this.txtDesiredError.TabIndex = 6;
-            this.txtDesiredError.Text = "0";
+            this.txtDesiredError.Text = "0,001";
             // 
             // btnTrain
             // 
+            this.btnTrain.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTrain.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnTrain.ForeColor = System.Drawing.SystemColors.Control;
             this.btnTrain.Location = new System.Drawing.Point(472, 389);
             this.btnTrain.Name = "btnTrain";
             this.btnTrain.Size = new System.Drawing.Size(75, 30);
             this.btnTrain.TabIndex = 9;
             this.btnTrain.Text = "Trenuj";
-            this.btnTrain.UseVisualStyleBackColor = true;
+            this.btnTrain.UseVisualStyleBackColor = false;
             this.btnTrain.Click += new System.EventHandler(this.btnTrain_Click);
             // 
             // lblName
@@ -185,7 +200,10 @@ namespace Program.Network_Training
             // 
             // txtReport
             // 
+            this.txtReport.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtReport.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtReport.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtReport.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtReport.Location = new System.Drawing.Point(362, 12);
             this.txtReport.Multiline = true;
             this.txtReport.Name = "txtReport";
@@ -194,7 +212,9 @@ namespace Program.Network_Training
             // 
             // cmbActivationFunctionHidden
             // 
+            this.cmbActivationFunctionHidden.BackColor = System.Drawing.SystemColors.InfoText;
             this.cmbActivationFunctionHidden.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.cmbActivationFunctionHidden.ForeColor = System.Drawing.SystemColors.Menu;
             this.cmbActivationFunctionHidden.FormattingEnabled = true;
             this.cmbActivationFunctionHidden.Location = new System.Drawing.Point(196, 253);
             this.cmbActivationFunctionHidden.Name = "cmbActivationFunctionHidden";
@@ -203,7 +223,9 @@ namespace Program.Network_Training
             // 
             // cmbActivationFunctionOutput
             // 
+            this.cmbActivationFunctionOutput.BackColor = System.Drawing.SystemColors.InfoText;
             this.cmbActivationFunctionOutput.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.cmbActivationFunctionOutput.ForeColor = System.Drawing.SystemColors.Menu;
             this.cmbActivationFunctionOutput.FormattingEnabled = true;
             this.cmbActivationFunctionOutput.Location = new System.Drawing.Point(196, 302);
             this.cmbActivationFunctionOutput.Name = "cmbActivationFunctionOutput";
@@ -212,7 +234,9 @@ namespace Program.Network_Training
             // 
             // cmbTrainAlgorithm
             // 
+            this.cmbTrainAlgorithm.BackColor = System.Drawing.SystemColors.InfoText;
             this.cmbTrainAlgorithm.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.cmbTrainAlgorithm.ForeColor = System.Drawing.SystemColors.Menu;
             this.cmbTrainAlgorithm.FormattingEnabled = true;
             this.cmbTrainAlgorithm.Location = new System.Drawing.Point(196, 350);
             this.cmbTrainAlgorithm.Name = "cmbTrainAlgorithm";
@@ -254,12 +278,15 @@ namespace Program.Network_Training
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExit.Font = new System.Drawing.Font("Arial Black", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnExit.ForeColor = System.Drawing.SystemColors.Control;
             this.btnExit.Location = new System.Drawing.Point(12, 388);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 30);
             this.btnExit.TabIndex = 26;
             this.btnExit.Text = "Wyjście";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label6
@@ -288,7 +315,9 @@ namespace Program.Network_Training
             // 
             // txtMomentum
             // 
+            this.txtMomentum.BackColor = System.Drawing.SystemColors.InfoText;
             this.txtMomentum.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.txtMomentum.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtMomentum.Location = new System.Drawing.Point(195, 181);
             this.txtMomentum.Name = "txtMomentum";
             this.txtMomentum.Size = new System.Drawing.Size(101, 28);
@@ -297,7 +326,9 @@ namespace Program.Network_Training
             // 
             // txtLearningRate
             // 
+            this.txtLearningRate.BackColor = System.Drawing.SystemColors.InfoText;
             this.txtLearningRate.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.txtLearningRate.ForeColor = System.Drawing.SystemColors.Menu;
             this.txtLearningRate.Location = new System.Drawing.Point(195, 215);
             this.txtLearningRate.Name = "txtLearningRate";
             this.txtLearningRate.Size = new System.Drawing.Size(101, 28);
@@ -430,7 +461,9 @@ namespace Program.Network_Training
             // 
             // txtHelp
             // 
+            this.txtHelp.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtHelp.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.txtHelp.ForeColor = System.Drawing.SystemColors.Window;
             this.txtHelp.Location = new System.Drawing.Point(582, 11);
             this.txtHelp.Multiline = true;
             this.txtHelp.Name = "txtHelp";
@@ -444,7 +477,7 @@ namespace Program.Network_Training
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Program.Properties.Resources._0002D2JVEG335J9M_C122_F4;
-            this.ClientSize = new System.Drawing.Size(806, 431);
+            this.ClientSize = new System.Drawing.Size(549, 431);
             this.Controls.Add(this.txtHelp);
             this.Controls.Add(this.btnHideHelp);
             this.Controls.Add(this.btnTrainAlgorithmRate);

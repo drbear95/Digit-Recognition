@@ -73,31 +73,38 @@ namespace Program.UserGraphicInterface
         {
             using (NeuralNet net = new NeuralNet(@"..\..\Network\sampledigits_float.net"))
             {
-                string[] temp = new string[matrix.Image.Width * matrix.Image.Height];
-                float[] entrydata = new float[temp.Length];
-                temp = DataAppender.GetMatrix((Bitmap)matrix.Image, temp);
-                for (int i = 0; i < temp.Length-1; i++)
+                try
                 {
-                    entrydata[i] = float.Parse(temp[i]);
+                    string[] temp = new string[matrix.Image.Width * matrix.Image.Height];
+                    float[] entrydata = new float[temp.Length];
+                    temp = DataAppender.GetMatrix((Bitmap)matrix.Image, temp);
+                    for (int i = 0; i < temp.Length - 1; i++)
+                    {
+                        entrydata[i] = float.Parse(temp[i]);
+                    }
+                    DataType[] calc_out = net.Run(entrydata);
+                    txtOut1.Text = String.Format("{0:F4}", calc_out[0]);
+                    txtOut2.Text = String.Format("{0:F4}", calc_out[1]);
+                    txtOut3.Text = String.Format("{0:F4}", calc_out[2]);
+                    txtOut4.Text = String.Format("{0:F4}", calc_out[3]);
+                    string binary = string.Empty;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (calc_out[i] > 0.5)
+                        {
+                            binary += 1;
+                        }
+                        else
+                        {
+                            binary += 0;
+                        }
+                    }
+                    txtCheckedValue.Text = Convert.ToInt32(binary, 2).ToString();
                 }
-                DataType[] calc_out = net.Run(entrydata);
-                txtOut1.Text = String.Format("{0:F4}", calc_out[0]);
-                txtOut2.Text = String.Format("{0:F4}", calc_out[1]);
-                txtOut3.Text = String.Format("{0:F4}", calc_out[2]);
-                txtOut4.Text = String.Format("{0:F4}", calc_out[3]);
-                string binary = string.Empty;
-                for (int i = 0; i < 4; i++)
+                catch (Exception)
                 {
-                    if (calc_out[i] > 0.5)
-                    {
-                        binary += 1;
-                    }
-                    else
-                    {
-                        binary += 0;
-                    }
+                    MessageBox.Show("Nie narysowałeś liczby");
                 }
-                txtCheckedValue.Text = Convert.ToInt32(binary, 2).ToString();
             }
         }
 
